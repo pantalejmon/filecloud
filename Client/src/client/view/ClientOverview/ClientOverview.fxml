@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.ClientOverview.ClientOverviewController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.5" layoutY="53.0" prefHeight="500.0" prefWidth="1000.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="507.0" prefWidth="498.0">
+                     <children>
+                        <StackPane fx:id="localStackPane" layoutX="-13.0" layoutY="102.0" onMouseClicked="#buttonClick_callback" prefHeight="499.0" prefWidth="496.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                           <children>
+                              <TreeView fx:id="localTreeView" layoutX="10.0" layoutY="10.0" prefHeight="479.0" prefWidth="496.0" />
+                           </children>
+                        </StackPane>
+                        <Button fx:id="newLocalFolderButton" layoutX="210.0" layoutY="65.0" mnemonicParsing="false" onAction="#newFolderLocal_callback" text="New Folder" />
+                        <Text boundsType="VISUAL" layoutX="145.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local files" textAlignment="CENTER" wrappingWidth="203.48046875" AnchorPane.topAnchor="7.96484375">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <effect>
+                              <Glow level="0.4" />
+                           </effect></Text>
+                        <Button layoutX="49.0" layoutY="323.0" mnemonicParsing="false" onAction="#uploadFiles" text="Upload" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" />
+                        <Button layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onAction="#backLocal_callback" text="Back" />
+                        <Button layoutX="417.0" layoutY="65.0" mnemonicParsing="false" onAction="#deleteFolderLocal_callback" text="Delete" />
+                        <TextField fx:id="newLocalFolderInput" layoutX="75.0" layoutY="65.0" prefHeight="25.0" prefWidth="248.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="503.0" prefWidth="495.0">
+                     <children>
+                        <Text boundsType="VISUAL" fill="#171717" layoutX="100.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud" textAlignment="CENTER" wrappingWidth="296.00000102072954" AnchorPane.topAnchor="9.1171875">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <effect>
+                              <Glow level="0.4" />
+                           </effect></Text>
+                        <StackPane fx:id="archiveStackPane" layoutX="59.0" layoutY="102.0" prefHeight="499.0" prefWidth="496.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                           <children>
+                              <TreeView fx:id="archiveTreeView" prefHeight="511.0" prefWidth="496.0" />
+                           </children>
+                        </StackPane>
+                        <Button layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onAction="#backArchive_callback" text="Back" />
+                        <Button fx:id="newArchiveFolderButton" layoutX="210.0" layoutY="65.0" mnemonicParsing="false" onAction="#newFolderArchive_callback" text="New Folder" />
+                        <Button layoutX="20.0" layoutY="459.0" mnemonicParsing="false" onAction="#downloadFiles" text="Download" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="405.0" />
+                        <Button layoutX="415.0" layoutY="65.0" mnemonicParsing="false" onAction="#deleteFolderArchive_callback" text="Delete" />
+                        <TextField fx:id="newArchiveFolderInput" layoutX="73.0" layoutY="65.0" prefHeight="25.0" prefWidth="248.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <Button mnemonicParsing="false" onAction="#logout_callback" text="Logout" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="10.0" />
+            <HBox layoutX="450.0" layoutY="15.0" prefHeight="9.0" prefWidth="93.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
+                  <Text fx:id="userLogin" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;user_login&gt;">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
+               </children>
+            </HBox>
+            <Button layoutX="818.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshTrees" text="Refresh" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Pane prefHeight="23.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server IP:" wrappingWidth="103.4296875" />
+            <Text fx:id="ipnumber" layoutX="87.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;IP&gt;" wrappingWidth="103.4296875" />
+            <Text fx:id="userLogin111" layoutX="396.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current status:" wrappingWidth="103.4296875" />
+            <Text fx:id="status" layoutX="500.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;online_offline&gt;" wrappingWidth="90.521484375" />
+            <Separator layoutX="281.0" layoutY="5.0" orientation="VERTICAL" prefHeight="16.0" prefWidth="0.0" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

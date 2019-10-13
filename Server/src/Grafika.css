@@ -1,0 +1,47 @@
+
+
+
+.root{
+    -fx-font-size: 12pt;
+   
+    -fx-base: dimgray;
+    
+    /*-fx-fit-to-width: true;*/
+    /*-fx-text-fill: white;*/
+
+}
+
+.label
+{
+    -fx-font-size: 12pt;
+    -fx-opacity: 1;
+    -fx-base: dimgray;
+    -fx-text-fill: black;
+    -fx-background: dimgray;
+    
+}
+
+
+.hbox {
+    -fx-base: dimgray;
+    -fx-background-color: dimgray;
+    -fx-border-width: 2px;
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.vbox {
+    -fx-base: dimgray;
+    -fx-background-color: dimgray;
+    -fx-border-width: 2px;
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.background {
+    -fx-background-color: #1d1d1d;
+}
